@@ -2,6 +2,7 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+  <%= button_to "Become a frog", "/tadpoles/#{@tadpole.id}/metamorphose", {method: :post} %>
   <!-- the form should post to /tadpoles/:id/metamorphose -->
 
   <p>Color: <%= @tadpole.color %></p>
