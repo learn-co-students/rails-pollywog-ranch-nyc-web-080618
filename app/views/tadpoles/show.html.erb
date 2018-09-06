@@ -2,6 +2,11 @@
   <h1><%= @tadpole.name %> the Tadpole</h1>
 
   <!-- make form to make "Become a frog" button here -->
+<!-- url: {action: "metamorphose", params: {id: @tadpole.id}} -->
+
+  <!-- <%= form_for @tadpole do |f| %> -->
+    <%= button_to "Become a frog", metamorphose_path(@tadpole)  %>
+  <!-- <% end %> -->
   <!-- the form should post to /tadpoles/:id/metamorphose -->
 
   <p>Color: <%= @tadpole.color %></p>
