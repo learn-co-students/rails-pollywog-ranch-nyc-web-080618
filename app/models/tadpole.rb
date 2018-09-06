@@ -1,3 +1,5 @@
 class Tadpole < ActiveRecord::Base
-  # code goes here
+  belongs_to :frog
+  delegate :pond, :to => :frog, :allow_nil => true
+  ##still need to mark "has_many" in Pond class
 end
