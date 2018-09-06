@@ -11,6 +11,20 @@
   <a href="/tadpoles">Back</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> |
   <a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+
+  <!-- <input type="submit" name="" value="Become a frog"> -->
+  <!-- <%= link_to '<button type="button">Become a frog</button>', metamorphose_path %>  -->
+  <!-- <form action="/tadpoles/<%= @tadpole.id %>/metamorphose" method="post">
+    <input type="hidden" name="name" value="<%= @tadpole.name %>">
+    <input type="hidden" name="color" value="<%= @tadpole.color %>">
+    <input type="submit" value="Become a frog" />
+  </form> -->
+
+  <%= form_for @tadpole, url: metamorphose_path(@tadpole), method: :post do |f| %>
+    <% f.hidden_field :name, value: @tadpole.name %>
+    <% f.hidden_field :color, value: @tadpole.color %>
+    <%= f.submit "Become a frog"%>
+  <% end %>
 </div>
 
 <div class="card">

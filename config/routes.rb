@@ -13,8 +13,10 @@ Rails.application.routes.draw do
 
   # resources
   resources :ponds
+  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose', as: "metamorphose"
 
-  resources :tadpoles, :only => [:index, :show, :edit, :update, :destroy, :metamorphose, :create]
+  resources :tadpoles, :only => [:index, :show, :edit, :update, :destroy, :metamorphose, :create] do
+  end
 
   # nested resources
   resources :frogs do
